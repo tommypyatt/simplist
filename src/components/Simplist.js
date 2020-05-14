@@ -3,7 +3,7 @@ import React from 'react';
 class Listify extends React.Component {
   render() {
     return (
-      <p>LISTIFY</p>
+      <p>App goes here</p>
     );
   }
 }
