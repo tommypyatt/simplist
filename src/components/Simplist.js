@@ -12,7 +12,9 @@ class Listify extends React.Component {
   }
 
   removeById(id) {
-    this.props.dispatch(removeById(id));
+    this.props.dispatch(removeById({
+      id
+    }));
   }
 
   render() {

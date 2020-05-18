@@ -53,11 +53,11 @@ class AddNewItem extends React.Component {
   render() {
     return (
       <div>
-        { !!this.state.error && <p>Nothing to add</p>}
         <form onSubmit={this.onSubmit}>
           <input value={this.state.value} onChange={this.onChange} />
           <button>Add Item</button>
         </form>
+        { !!this.state.error && <p>Nothing to add</p>}
       </div>
     );
   }

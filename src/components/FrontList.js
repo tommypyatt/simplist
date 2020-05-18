@@ -7,7 +7,7 @@ const FrontList = (props) => (
     { !!props.list.length && (
       <ul>
         {props.list.map((item, index) => (
-          <FrontListItem key={item.id} {...item} removeById={props.removeById} />
+          <FrontListItem key={item.id} {...item} removeById={props.removeById} setCheckedById={props.setCheckedById} />
         ))}
       </ul>
     )}
