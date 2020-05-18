@@ -1,9 +1,12 @@
 import React from 'react';
+import FrontList from './FrontList';
 
 class Listify extends React.Component {
   render() {
     return (
-      <p>App goes here</p>
+      <div>
+        <FrontList />
+      </div>
     );
   }
 }
