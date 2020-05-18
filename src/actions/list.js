@@ -5,6 +5,13 @@ export const addItem = ({ name, crossedOut = false } = {}) => ({
   itemToAdd: {
     name,
     crossedOut,
-    key: uuid()
+    id: uuid()
+  }
+});
+
+export const removeById = ({ id } = {}) => ({
+  type: 'REMOVE_ITEM',
+  itemToRemove: {
+    id
   }
 });

@@ -1,20 +1,17 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import FrontListItem from './FrontListItem';
 
 const FrontList = (props) => (
   <div>
-    <ul>
-      {props.list.map((item, index) => (
-        <li key={item.key}>{item.name}</li>
-      ))}
-    </ul>
+    { props.list.length === 0 && <p>There is nothing</p>}
+    { !!props.list.length && (
+      <ul>
+        {props.list.map((item, index) => (
+          <FrontListItem key={item.id} {...item} removeById={props.removeById} />
+        ))}
+      </ul>
+    )}
   </div>
 );
 
-const mapStateToProps = (state) => {
-  return {
-    list: state.list
-  }
-};
-
-export default connect(mapStateToProps)(FrontList);
+export default FrontList;

@@ -7,6 +7,10 @@ export default (state = listDefaultState, action) => {
         ...state,
         action.itemToAdd
       ]
+    case 'REMOVE_ITEM':
+      return state.filter((item) => {
+        return item.id !== action.itemToRemove.id;
+      });
     default:
       return state;
   }
