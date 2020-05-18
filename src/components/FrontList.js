@@ -1,8 +1,8 @@
 import React from 'react';
 import FrontListItem from './FrontListItem';
 
-const FrontList = (props) => (
-  <div>
+const FrontList = (props) => {
+  return <div>
     { props.list.length === 0 && <p>There is nothing</p>}
     { !!props.list.length && (
       <ul>
@@ -12,6 +12,6 @@ const FrontList = (props) => (
       </ul>
     )}
   </div>
-);
+};
 
 export default FrontList;

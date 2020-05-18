@@ -13,13 +13,13 @@ export default (state = listDefaultState, action) => {
         return item.id !== action.itemToRemove.id;
       });
     case 'CHECK_ITEM':
-      console.log('check');
-      
-      return state;
+      return state.map((item) => {
+        return item.id === action.itemToAdjust.id ? {...item, crossedOut: true} : {...item};
+      });
     case 'UNCHECK_ITEM':
-      console.log('uncheck');
-      
-      return state;
+      return state.map((item) => {
+        return item.id === action.itemToAdjust.id ? {...item, crossedOut: false} : {...item};
+      });
     default:
       return state;
   }

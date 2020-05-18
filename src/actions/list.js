@@ -18,7 +18,6 @@ export const removeById = ({ id } = {}) => ({
 
 export const setCheckedById = ({ id, checked } = {}) => {
   const type = checked ? 'CHECK_ITEM' : 'UNCHECK_ITEM';
-  console.log('scby');
   
   return {
     type,

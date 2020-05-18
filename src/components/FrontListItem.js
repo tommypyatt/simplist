@@ -1,10 +1,13 @@
 import React from 'react';
 
-const FrontListItem = ({ name, id, removeById }) => (
+const FrontListItem = ({ name, id, crossedOut, removeById, setCheckedById }) => (
   <li>
     <label>
-      <input type='checkbox' onChange={() => {
-        console.log('oc');
+      <input type='checkbox' defaultChecked={crossedOut} onChange={(e) => {
+        setCheckedById({
+          id,
+          checked: e.target.checked
+        });
       }} />
       { name }
     </label>
