@@ -52,12 +52,14 @@ class AddNewItem extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='add-new'>
         <form onSubmit={this.onSubmit}>
-          <input value={this.state.value} onChange={this.onChange} />
-          <button>Add Item</button>
+          <div className='add-new__input-wrap'>
+            <input className='add-new__input' value={this.state.value} placeholder='Type here to add new' onChange={this.onChange} />
+          </div>
+          { !!this.state.error && <p className='add-new__error'>Type above to add an item</p>}
+          <button className='add-new__button'>Add Item</button>
         </form>
-        { !!this.state.error && <p>Nothing to add</p>}
       </div>
     );
   }

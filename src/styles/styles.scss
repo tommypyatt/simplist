@@ -1,5 +1,6 @@
-$color: red;
-
-* {
-  color: $color;
-}
+@import 'base/variables';
+@import 'base/base';
+@import 'components/app';
+@import 'components/header';
+@import 'components/list';
+@import 'components/add-new';

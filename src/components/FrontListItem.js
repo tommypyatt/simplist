@@ -1,17 +1,17 @@
 import React from 'react';
 
 const FrontListItem = ({ name, id, crossedOut, removeById, setCheckedById }) => (
-  <li>
-    <label>
-      <input type='checkbox' defaultChecked={crossedOut} onChange={(e) => {
+  <li className='list__item'>
+    <label className='list__label'>
+      <input className='list__checkbox' type='checkbox' defaultChecked={crossedOut} onChange={(e) => {
         setCheckedById({
           id,
           checked: e.target.checked
         });
       }} />
-      { name }
+      <span className='list__item-text'>{ name }</span>
     </label>
-    <button onClick={() => { removeById(id) }}>Remove</button>
+    <button className='list__remove' onClick={() => { removeById(id) }}>Remove</button>
   </li>
 );
 
