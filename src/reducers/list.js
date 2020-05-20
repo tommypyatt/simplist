@@ -1,5 +1,5 @@
 const storedState = JSON.parse(localStorage.getItem('appState'));
-const listDefaultState = storedState.list;
+const listDefaultState = storedState ? storedState.list : [];
 
 export default (state = listDefaultState, action) => {
   switch (action.type) {
