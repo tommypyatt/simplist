@@ -1,4 +1,12 @@
 .header {
+  position: relative;
+  
+  &__top {
+    > a {
+      text-decoration: none;
+    }
+  }
+
   &__title {
     font-size: 4rem;
     text-align: center;
