@@ -4,7 +4,7 @@ import FrontList from './FrontList';
 import AddNewItem from './AddNewItem';
 import { addItem, removeById, setCheckedById } from '../actions/list';
 
-class Listify extends React.Component {
+class Simplist extends React.Component {
   constructor(props) {
     super(props);
 
@@ -45,4 +45,4 @@ const mapStateToProps = (state) => {
   }
 };
 
-export default connect(mapStateToProps)(Listify);
+export default connect(mapStateToProps)(Simplist);

@@ -23,7 +23,7 @@
     font-family: $handwritten;
     font-weight: bold;
   }
-  
+
   &__remove {
     position: absolute;
     top: 10px;
@@ -31,6 +31,12 @@
     background: transparent;
     border: none;
     font-size: 1.2rem;
+  }
+
+  &__add {
+    position: absolute;
+    top: 5px;
+    right: 70px;
   }
 
   &__checkbox {
