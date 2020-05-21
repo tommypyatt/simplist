@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import RecentsList from './RecentsList';
 import { reAddItem } from '../actions/list';
+import unaddedRecents from '../selectors/recents-list';
 
 class PreviousItems extends React.Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class PreviousItems extends React.Component {
     return (
       <div>
         <p>Here are things that have been added previously</p>
-        <RecentsList list={this.props.recentsList} reAddItem={this.reAddItem} removeById={this.removeById} />
+        <RecentsList list={unaddedRecents(this.props.list, this.props.recentsList)} reAddItem={this.reAddItem} removeById={this.removeById} />
       </div>
     );
   }
@@ -33,7 +34,8 @@ class PreviousItems extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    recentsList: state.recentsList
+    recentsList: state.recentsList,
+    list: state.list
   }
 };
 
