@@ -7,7 +7,7 @@ const RecentsList = (props) => {
     { !!props.list.length && (
       <ul className='list__list'>
         {props.list.map((item, index) => (
-          <RecentsListItem key={item.id} {...item} removeById={props.removeById} addById={props.addById} />
+          <RecentsListItem key={item.id} {...item} removeById={props.removeById} reAddItem={props.reAddItem} />
         ))}
       </ul>
     )}
