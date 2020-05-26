@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import RecentsList from './RecentsList';
 import { reAddItem } from '../actions/list';
+import { removeRecent } from '../actions/recents-list';
 import unaddedRecents from '../selectors/recents-list';
 
 class PreviousItems extends React.Component {
@@ -9,6 +10,7 @@ class PreviousItems extends React.Component {
     super(props);
 
     this.reAddItem = this.reAddItem.bind(this);
+    this.removeById = this.removeById.bind(this);
   }
 
   reAddItem(id, name) {
@@ -20,12 +22,15 @@ class PreviousItems extends React.Component {
 
   removeById(id) {
     console.log('remove', id);
+    this.props.dispatch(removeRecent({
+      id
+    }));
   }
 
   render() {
     return (
       <div>
-        <p>Here are things that have been added previously</p>
+        <h2 className='previous-items__heading'>Previously added items</h2>
         <RecentsList list={unaddedRecents(this.props.list, this.props.recentsList)} reAddItem={this.reAddItem} removeById={this.removeById} />
       </div>
     );

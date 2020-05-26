@@ -11,7 +11,9 @@ const FrontListItem = ({ name, id, crossedOut, removeById, setCheckedById }) => 
       }} />
       <span className='list__item-text'>{ name }</span>
     </label>
-    <button className='list__remove' onClick={() => { removeById(id) }}>Remove</button>
+    <div className='list__buttons'>
+      <button className='list__remove' onClick={() => { removeById(id) }}>Remove</button>
+    </div>
   </li>
 );
 

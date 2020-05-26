@@ -9,6 +9,10 @@ export default (state = recentsListDefaultState, action) => {
           ...state,
           action.itemToAdd
         ]
+    case 'REMOVE_RECENT':
+      return state.filter((item) => {
+        return item.id !== action.itemToRemove.id;
+      });
     default:
       return state;
   }

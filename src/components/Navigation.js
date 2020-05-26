@@ -35,14 +35,17 @@ class Navigation extends React.Component {
         <div className='nav__open'>
           <a className='nav__open-link' onClick={ this.toggleIsOpen }>Open navigation</a>
         </div>
-        <ul className={'nav__list' + (this.state.isOpen ? ' is-open' : '')}>
-          <li className='nav__item'>
-            <Link to='/' onClick={this.closeMenu}>List</Link>
-          </li>
-          <li className='nav__item'>
-            <Link to='/previous-items' onClick={this.closeMenu}>Previous Items</Link>
-          </li>
-        </ul>
+        <div className={'nav__off-canvas' + (this.state.isOpen ? ' is-open' : '')}>
+          <a className='nav__close-link' onClick={this.closeMenu}>Close</a>
+          <ul className='nav__list'>
+            <li className='nav__item'>
+              <Link to='/' className='nav__link' onClick={this.closeMenu}>List</Link>
+            </li>
+            <li className='nav__item'>
+              <Link to='/previous-items' className='nav__link' onClick={this.closeMenu}>Previous Items</Link>
+            </li>
+          </ul>
+        </div>
       </div>
     )
   }

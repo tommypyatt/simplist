@@ -5,8 +5,10 @@ const FrontListItem = ({ name, id, reAddItem, removeById }) => (
     <label className='list__label'>
       <span className='list__item-text'>{ name }</span>
     </label>
-    <button className='list__add' onClick={() => { reAddItem(id, name) }}>Add</button>
-    <button className='list__remove' onClick={() => { removeById(id) }}>Remove</button>
+    <div className='list__buttons'>
+      <button className='list__add' onClick={() => { reAddItem(id, name) }}>Add again</button>
+      <button className='list__forget' onClick={() => { removeById(id) }}>Forget</button>
+    </div>
   </li>
 );
 
