@@ -35,3 +35,7 @@ export const setCheckedById = ({ id, checked } = {}) => {
     }
   };
 };
+
+export const clear = () => ({
+  type: 'REMOVE_ALL'
+});

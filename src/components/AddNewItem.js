@@ -59,6 +59,7 @@ class AddNewItem extends React.Component {
           </div>
           { !!this.state.error && <p className='add-new__error'>Type above to add an item</p>}
           <button className='add-new__button'>Add Item</button>
+          <button className='add-new__button' type='button' onClick={this.props.clearFrontList}>Clear</button>
         </form>
       </div>
     );

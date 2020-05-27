@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import FrontList from './FrontList';
 import AddNewItem from './AddNewItem';
-import { addItem, removeById, setCheckedById } from '../actions/list';
+import { addItem, removeById, setCheckedById, clear } from '../actions/list';
 
 class Simplist extends React.Component {
   constructor(props) {
@@ -10,6 +10,8 @@ class Simplist extends React.Component {
 
     this.removeById = this.removeById.bind(this);
     this.setCheckedById = this.setCheckedById.bind(this);
+    this.addItem = this.addItem.bind(this);
+    this.clearFrontList = this.clearFrontList.bind(this);
   }
 
   removeById(id) {
@@ -25,15 +27,21 @@ class Simplist extends React.Component {
     }));
   }
 
+  addItem(value) {
+    this.props.dispatch(addItem({
+      name: value
+    }))
+  }
+
+  clearFrontList() {
+    this.props.dispatch(clear());
+  }
+
   render() {
     return (
       <div>
         <FrontList list={this.props.list} removeById={this.removeById} setCheckedById={this.setCheckedById} />
-        <AddNewItem addItem={(value) => {
-          this.props.dispatch(addItem({
-            name: value
-          }))
-        }} />
+        <AddNewItem addItem={this.addItem} clearFrontList={this.clearFrontList} />
       </div>
     );
   }

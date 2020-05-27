@@ -12,6 +12,8 @@ export default (state = listDefaultState, action) => {
       return state.filter((item) => {
         return item.id !== action.itemToRemove.id;
       });
+    case 'REMOVE_ALL':
+      return [];
     case 'CHECK_ITEM':
       return state.map((item) => {
         return item.id === action.itemToAdjust.id ? {...item, crossedOut: true} : {...item};
