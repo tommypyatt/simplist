@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 class Navigation extends React.Component {
   constructor(props) {
@@ -39,10 +39,10 @@ class Navigation extends React.Component {
           <a className='nav__close-link' onClick={this.closeMenu}>Close</a>
           <ul className='nav__list'>
             <li className='nav__item'>
-              <Link to='/' className='nav__link' onClick={this.closeMenu}>List</Link>
+              <NavLink to='/' className='nav__link' onClick={this.closeMenu} exact={true}>List</NavLink>
             </li>
             <li className='nav__item'>
-              <Link to='/previous-items' className='nav__link' onClick={this.closeMenu}>Previous Items</Link>
+              <NavLink to='/previous-items' className='nav__link' onClick={this.closeMenu} exact={true}>Previous Items</NavLink>
             </li>
           </ul>
         </div>
