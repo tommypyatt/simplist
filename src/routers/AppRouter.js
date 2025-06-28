@@ -12,7 +12,7 @@ const Home = () => (
 );
 
 const AppRouter = () => (
-  <BrowserRouter>
+  <BrowserRouter basename="/simplist">
     <div>
       <Header />
       <Switch>
